@@ -27,7 +27,7 @@ print('hola');
 Para imprimir una variable se la coloca anteponiendo un $ dentro de las comillas 
 
 >`var` numero = 5;  
->print(**$**`numero`);  
+>print($`numero`);  
 
 Las comillas simples, puestas de forma triple, permiten escribir un texto que se imprimira respetando los saltos de linea que hicimos al editar el codigo
 
@@ -553,3 +553,49 @@ Etiqueta Uno:
 ```
 
 # For
+El for es una estructura de control en la que se indica el número de iteraciones.
+
+La estructura de un ciclo for es:
+```
+for(inicializador, condicion, incrementar/decrementar){
+      //codigo
+}
+```
+El ciclo for in recorre el contenido de una lista.
+
+La estructura de un ciclo for in es:
+```
+List lista = ['a','b','c','d'];
+for(Tipo nombreVariable in lista){
+      print(nombreVariable);
+}
+```
+---
+**Ciclo for:** Ejecuta un bloque de código por n cantidad de veces.
+
+**Sintaxis**
+```
+for(inicializador, condición, incrementar/decrementar){
+	//Código
+}
+```
+**Ciclo for…in:** Recorre el contenido de una lista.
+
+**Sintaxis**
+```
+List lista = [1,2,3];
+
+for(tipo nombreVariable in lista){
+	print(nombreVariable);
+}
+```
+**Ciclo forEach:** Es un metodo interno del objeto lista, y la recorre al igual que el ciclo for…in.
+
+Sintaxis
+```
+List lista = [1,2,3];
+
+lista.forEach((numero) {
+	print(numero);
+});
+```
