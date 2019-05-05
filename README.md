@@ -599,3 +599,176 @@ lista.forEach((numero) {
 	print(numero);
 });
 ```
+
+# While y do-while
+
+**Ciclo while:** evalúa una expresión al principio, y luego ejecuta un bloque de código si esta se cumple.
+
+**Sintaxis**
+```
+while(condición){
+  //código
+}
+```
+**Ciclo dowhile:** ejecuta un bloque de código, y evalúa una expresión al final. Si esta no se cumple, el ciclo no se repite. Nota: el bloque de código siempre se ejecuta por lo menos una vez.
+
+**Sintaxis**
+```
+do{
+  //código
+}while(condición)
+```
+> **Diferencia entre ellos:** El uso de estos ciclos es algo sencillo de implementar pero su logica es la importante ya que while evalua al inicio y luego ejecuta y por otro lado do/while se ejecuta la primera vez y despues evalua.
+
+# Break y Continue
+
+**Break**
+Se utiliza break para **detener** el trabajo del ciclo actual.
+
+**Continue**
+Con este se **detiene el trabajo** pero únicamente del bloque de código que continúe inmediatamente después pero el **ciclo continuará** trabajando.
+
+**Etiquetas**
+Lo que hacen estas es **continuar** la **ejecución** de tu código desde un **punto definido** utilizando por una 
+
+---
+
+**Break:** rompe un ciclo por completo. Ejemplo:
+```
+for(int i=0; i<=3; i++){
+	print(i);
+	if(i==2) break;
+}
+
+//Salida
+
+0
+1
+2
+```
+
+**Continue:** se detiene el trabajo para el código después de esta sentencia, pero el ciclo se sigue ejecutando. Ejemplo:
+```
+for(int i=0; i<=3; i++){
+	if(i==2) continue;
+	print (i);
+
+}
+
+//Salida
+
+0
+1
+3
+```
+
+**Etiquetas:** continúa la ejecución del programa desde un punto definido. Ejemplo:
+```
+for(int i=0; i<=3; i++){
+	if(i==2) continue etiqueta1;
+	print (i);
+
+}
+
+etiqueta1: 
+print("Hola!");
+
+//Salida
+
+0
+1
+Hola!
+```
+
+# Definicion de clases y miembros
+>Una clase **es el plano de un objeto**, es la descripción del objeto, pero no el objeto, más bien es una plantilla para crear objetos.
+>
+>**Todo** puede ser descrito como un **objeto**, con ciertas variables de instancia y métodos, por ejemplo casas, carros, personas, animales, etc.
+>
+>Se le llama **miembros de una clase** a todas las **variables de instancia y métodos** que se existen dentro de ella y podemos acceder a ellos **llamándolos** desde un objeto.
+---
+**Clases:** Son la base de la **programación orientada a objetos**. Es una plantilla para crear un objeto. La misma posee atributos y métodos.
+
+**Sintaxis**
+```
+class Empleado{
+	var id;
+	var nombre;
+
+	bool cumpleHorario(){
+		return true;
+	}
+
+	void trabajar(){
+		print("Trabajó");
+	}
+}
+```
+**Instanciación**
+```
+void main(){
+	//instanciacion oldMode
+	Empleado emp1 = new Empleado();
+	emp1.id = 1;
+	emp1.nombre = "Carlos";
+
+	//instanciacion newMode
+	Empleado emp2 = Empleado()
+	..id = 2
+	..nombre = "Pedro";
+	
+}
+```
+> >Nota: A partir de la versión 2.1 de Dart la palabra reservada new ya no es necesaria para instanciar una clase, y se puede usar los .. para la definicion de la clase. ambos metodos son iguales y no afectan en su funcionamiento.
+
+# Constructores por defecto, por parámetro o nombrados
+
+Los constructores se utilizan para inicializar una clase, son el primer método que se visualiza al instanciar un objeto.
+
+**Constructores por defecto**  
+El constructor por defecto ya existe cuando se crea una clase y se define creando un método con el mismo nombre de la clase ““nombreClase(){…}””
+
+**Constructores con parámetros**  
+Los constructores con parámetros son aquellos que pueden definir los miembros mediante el constructor.
+
+No puede existir en la misma clase un constructor por defecto y uno con parámetros.
+
+**Constructores nombrados**  
+También podemos definir constructores con un nombre definido por nosotros y ésto hace que puedan existir múltiples constructores.
+
+---
+
+**Constructores:**
+
+Constructor por defecto: ya existe cuando se crea una clase y se define creando un método con el mismo nombre de la clase.
+
+**Sintaxis**
+```
+nombreClase(){}
+```
+
+Constructor por parámetro: no puede existir si ya está establecido un constructor por defecto.
+
+**Sintaxis**
+```
+nombreClase(int param1, int param2){
+	this.param1 = param1;
+	this.param2 = param2;
+}
+
+//Puede resumirse de la siguiente manera
+
+nombreClase(this.param1, this.param2);
+```
+
+**Constructor nombrado:**  
+ posee un nombre definido por nosotros. Pueden existir múltiples de ellos.
+
+**Sintaxis**  
+```
+nombreClase.constructorNom(this.param1, this.param2);
+```
+
+> >Nota: La palabra reservada this hace referencia al objeto actual. Por lo tanto, cuando se hace por ejemplo la sentencia this.id = id, debe diferenciarse el primer “id”, ya que este es un atributo del objeto, y el segundo un parametro del constructor. Y es mediante ese parametro del constructor que inicializamos el atributo del objeto, no son las mismas variables (aunque se llamen igual).
+
+# 
